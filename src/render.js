@@ -1,0 +1,16 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+import App from './App';
+import { addPost, changePost } from './redux/state'
+
+export let rerenderTree = (state) => {
+
+   console.log(state);
+   ReactDOM.render(
+      <React.StrictMode>
+         <App state={state} addPost={addPost} changePost={changePost} />
+      </React.StrictMode >,
+      document.getElementById('root')
+   );
+}

@@ -1,38 +1,175 @@
-.App {
-  text-align: center;
+body,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+li,
+a,
+form {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  line-height: 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: "f", sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button {
+  cursor: pointer;
+}
+
+button,
+input,
+textarea {
+  outline: none !important;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus,
+input[type="checkbox"]:focus,
+input[type="radio"]:focus,
+input:active {
+  outline: none !important;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-right: 0 !important;
+}
+.page_wrap {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 1200px;
+  padding-top: 25px;
+  margin: 0 auto;
 }
-
-.App-link {
-  color: #61dafb;
+.header {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  border-bottom: 1px solid #c4c4c4;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar {
+  min-width: 300px;
+  max-width: 300px;
+}
+.sidebar_nav li a {
+  color: #000000;
+  font-size: 18px;
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px dashed #c4c4c4;
+  transition: 0.2s;
+}
+.sidebar_nav li a:hover {
+  color: blue;
+  text-decoration: none;
+}
+.content {
+  flex-grow: 1;
+  padding-left: 30px;
+}
+.profile_post_form {
+  margin-bottom: 45px;
+}
+.profile_post_form textarea {
+  display: block;
+  height: 100px;
+  width: 400px;
+  margin-bottom: 20px;
+}
+.profile_post_form .btn {
+  height: 40px;
+  padding: 0 25px;
+  background: green;
+  color: #ffffff;
+  border: none;
+  transition: 0.2s;
+}
+.profile_post_form .btn:hover {
+  opacity: 0.85;
+}
+.profile_posts .headline {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 24px;
+}
+.profile_posts_units {
+  margin-bottom: 20px;
+}
+.profile_posts_units .element {
+  display: flex;
+}
+.profile_posts_units .element_avatar {
+  max-width: 150px;
+  min-width: 150px;
+  padding-right: 25px;
+  box-sizing: border-box;
+}
+.profile_posts_units .element_avatar img {
+  width: 100%;
+}
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+.dialogs {
+  display: flex;
+}
+.dialogs_chats_menu {
+  min-width: 250px;
+  max-width: 250px;
+}
+.dialogs_content_message {
+  display: flex;
+}
+.dialogs_content_img {
+  width: 150px;
+}
+.dialogs_content_img img {
+  width: 100%;
+}
+.dialogs_content_name {
+  text-align: center;
+  font-size: 14px;
+}
+.dialogs_content_user {
+  margin-right: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.dialogs_content_text p {
+  font-size: 16px;
+  line-height: 1.3;
+}
+.dialogs_chats_menu li {
+  display: block;
+  padding-right: 25px;
+  margin-bottom: 5px;
+}
+.dialogs_chats_menu a {
+  display: inline-block;
+  padding: 5px 0;
+  color: blue;
+  border-bottom: 1px solid #ffffff;
+  transition: 0.2s;
+}
+.dialogs_chats_menu a:hover {
+  border-bottom: 1px dotted #c4c4c4;
 }

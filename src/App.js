@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import Dialogs from './components/Dialogs/Dialogs';
+import Header from './components/Header/Header';
+import Profile from './components/Profile/Profile';
+import Sidebar from './components/Sidebar/Sidebar';
+import { BrowserRouter, Route } from 'react-router-dom';
+import state from './redux/state';
 
-function App() {
+
+function App(props) {
+  console.log(props.changePost);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Header />
+        <div className="page_wrap">
+          <Sidebar />
+          <div className="content">
+            <Route path="/profile" render={() => <Profile profiles={props.state.profiles} addPost={props.addPost} changePost={props.changePost} myPostTextarea={state.myPostTextarea} />} />
+            <Route path="/dialogs" render={() => <Dialogs dialogs={props.state.dialogState.dialogs} messages={props.state.dialogState.messages} />} />
+          </div>
+        </div>
+      </BrowserRouter>
+    </>
   );
 }
 

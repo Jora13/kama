@@ -8,7 +8,6 @@ import state from './redux/state';
 
 
 function App(props) {
-  console.log(props.changePost);
   return (
     <>
       <BrowserRouter>

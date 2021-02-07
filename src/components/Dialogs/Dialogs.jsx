@@ -1,24 +1,36 @@
 import React from 'react'
+import { addDialogCreator, changeDialogCreator } from '../../redux/state';
 import DialogItem from './DialogItem';
 import DialogMessage from './DialogMessage';
 
 
 
 function Dialogs(props) {
-   let dialogitems = props.dialogs.map((d) => {
+
+   let state = props.store.getState().dialogState
+   console.log(state);
+
+   let dialogitems = state.dialogs.map((d) => {
       return (<DialogItem name={d.name} id={d.id} key={d.id} />)
    })
 
-   let messages = props.messages.map((m) => {
+   let messages = state.messages.map((m) => {
       return (<DialogMessage message={m.message} id={m.id} key={m.id} />)
    })
 
    let newDialogElement = React.createRef()
 
+   let updateTextarea = () => {
+      let text = newDialogElement.current.value
+      props.dispatch(changeDialogCreator(text))
+   }
+
    let addDialogMessage = () => {
       let text = newDialogElement.current.value
-      newDialogElement.current.value = ""
-      return text
+      if (text !== '') {
+         props.dispatch(addDialogCreator(text))
+         newDialogElement.current.value = ''
+      }
    }
 
    return (
@@ -46,14 +58,13 @@ function Dialogs(props) {
                      {messages}
                   </div>
                </div>
-            </div>
-         </div>
+               <div className="dialogs_form">
 
-         <div className="dialogs_form">
-
-            <div className="profile_post_form">
-               <textarea name="" ref={newDialogElement}></textarea>
-               <button className="btn" onClick={addDialogMessage}>Отправить</button>
+                  <div className="profile_post_form">
+                     <textarea name="" onChange={updateTextarea} ref={newDialogElement}></textarea>
+                     <button className="btn" onClick={addDialogMessage}>Отправить</button>
+                  </div>
+               </div>
             </div>
          </div>
       </>

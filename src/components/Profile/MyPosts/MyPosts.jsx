@@ -1,7 +1,9 @@
 import React from 'react'
+import { addPostCreator, changePostCreator } from '../../../redux/state'
 import Post from './Post/Post'
 
 function MyPosts(props) {
+
 
    let myposts = props.profiles.map(p => {
       return (<Post message={p.message} name={p.name} likecount={p.likecount} key={p.id} />)
@@ -12,14 +14,14 @@ function MyPosts(props) {
    let onAddPost = () => {
       let text = newPostElement.current.value
       if (text !== '') {
-         props.addPost(text)
+         props.dispatch(addPostCreator(text))
          newPostElement.current.value = ''
       }
    }
 
    let onChangePost = () => {
       let text = newPostElement.current.value
-      props.changePost(text)
+      props.dispatch(changePostCreator(text))
    }
 
    return (

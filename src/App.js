@@ -15,8 +15,12 @@ function App(props) {
         <div className="page_wrap">
           <Sidebar />
           <div className="content">
-            <Route path="/profile" render={() => <Profile profiles={props.state.profiles} addPost={props.addPost} changePost={props.changePost} myPostTextarea={state.myPostTextarea} />} />
-            <Route path="/dialogs" render={() => <Dialogs dialogs={props.state.dialogState.dialogs} messages={props.state.dialogState.messages} />} />
+            <Route path="/profile" render={() => <Profile
+              profiles={props.state.profiles}
+              dispatch={props.dispatch}
+              myPostTextarea={state.myPostTextarea} />}
+            />
+            <Route path="/dialogs" render={() => <Dialogs store={props.store} dispatch={props.dispatch} />} />
           </div>
         </div>
       </BrowserRouter>

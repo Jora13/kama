@@ -8,7 +8,7 @@ function Profile(props) {
          <div className="profile_posts">
             <ProfileInfo />
             <div className="profile">
-               <MyPosts profiles={props.profiles} addPost={props.addPost} changePost={props.changePost} myPostTextarea={props.myPostTextarea} />
+               <MyPosts profiles={props.profiles} dispatch={props.dispatch} myPostTextarea={props.myPostTextarea} />
             </div>
          </div>
       </>

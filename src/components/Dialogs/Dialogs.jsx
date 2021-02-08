@@ -1,5 +1,5 @@
 import React from 'react'
-import { addDialogCreator, changeDialogCreator } from '../../redux/state';
+import { addDialogCreator, changeDialogCreator } from '../../redux/dialogsReducer';
 import DialogItem from './DialogItem';
 import DialogMessage from './DialogMessage';
 
@@ -8,7 +8,6 @@ import DialogMessage from './DialogMessage';
 function Dialogs(props) {
 
    let state = props.store.getState().dialogState
-   console.log(state);
 
    let dialogitems = state.dialogs.map((d) => {
       return (<DialogItem name={d.name} id={d.id} key={d.id} />)

@@ -1,5 +1,5 @@
 import React from 'react'
-import { addPostCreator, changePostCreator } from '../../../redux/state'
+import { addPostCreator, changePostCreator } from '../../../redux/profileReducer'
 import Post from './Post/Post'
 
 function MyPosts(props) {

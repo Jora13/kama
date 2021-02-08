@@ -8,6 +8,7 @@ import state from './redux/state';
 
 
 function App(props) {
+
   return (
     <>
       <BrowserRouter>
@@ -16,9 +17,9 @@ function App(props) {
           <Sidebar />
           <div className="content">
             <Route path="/profile" render={() => <Profile
-              profiles={props.state.profiles}
+              profiles={props.state.profilePage.profiles}
               dispatch={props.dispatch}
-              myPostTextarea={state.myPostTextarea} />}
+              myPostTextarea={props.state.profilePage.myPostTextarea} />}
             />
             <Route path="/dialogs" render={() => <Dialogs store={props.store} dispatch={props.dispatch} />} />
           </div>

@@ -58,6 +58,9 @@ let store = {
             },
          ],
          myPostTextarea: ''
+      },
+      sidebar: {
+
       }
    },
 

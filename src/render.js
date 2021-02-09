@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 import App from './App';
-import { addPost, changePost } from './redux/state'
+import { addPost, changePost } from './redux/store'
 
 export let rerenderTree = (state) => {
 

@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 import Sidebar from './components/Sidebar/Sidebar';
 import { BrowserRouter, Route } from 'react-router-dom';
-import state from './redux/state';
+import state from './redux/store';
 
 
 function App(props) {

@@ -1,7 +1,30 @@
 const ADD_POST = 'ADD-POST'
 const CHANGE_POST = 'CHANGE-POST'
 
-const profileReducer = (state, action) => {
+let initialStore = {
+	profiles: [
+		{
+			id: 1,
+			name: 'Jora',
+			message: 'Hi! How are you?',
+			likecount: '1'
+		},
+		{
+			id: 2,
+			name: 'Jora',
+			message: 'i am very well.',
+			likecount: '2'
+		},
+		{
+			id: 3,
+			name: 'Jora',
+			message: 'i am very well.'
+		},
+	],
+	myPostTextarea: ''
+}
+
+const profileReducer = (state = initialStore, action) => {
 	switch (action.type) {
 		case ADD_POST:
 			let obj = {

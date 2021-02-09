@@ -1,5 +1,6 @@
 import React from 'react'
 import MyPosts from './MyPosts/MyPosts'
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 function Profile(props) {
@@ -8,7 +9,7 @@ function Profile(props) {
          <div className="profile_posts">
             <ProfileInfo />
             <div className="profile">
-               <MyPosts profiles={props.profiles} dispatch={props.dispatch} myPostTextarea={props.myPostTextarea} />
+               <MyPostsContainer store={props.store} profiles={props.profiles} dispatch={props.dispatch} myPostTextarea={props.myPostTextarea} />
             </div>
          </div>
       </>

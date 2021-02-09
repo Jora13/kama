@@ -3,8 +3,6 @@ import { addPostCreator, changePostCreator } from '../../../redux/profileReducer
 import Post from './Post/Post'
 
 function MyPosts(props) {
-
-
    let myposts = props.profiles.map(p => {
       return (<Post message={p.message} name={p.name} likecount={p.likecount} key={p.id} />)
    })
@@ -14,14 +12,13 @@ function MyPosts(props) {
    let onAddPost = () => {
       let text = newPostElement.current.value
       if (text !== '') {
-         props.dispatch(addPostCreator(text))
-         newPostElement.current.value = ''
+         props.addPost(text)
       }
    }
 
    let onChangePost = () => {
       let text = newPostElement.current.value
-      props.dispatch(changePostCreator(text))
+      props.changePost(text)
    }
 
    return (

@@ -33,7 +33,7 @@ const profileReducer = (state = initialStore, action) => {
 				message: action.postMessage
 			}
 			state.profiles.push(obj)
-			state.profiles.myPostTextarea = ''
+			state.myPostTextarea = ''
 			return state
 		case CHANGE_POST:
 			state.myPostTextarea = action.letterTextarea

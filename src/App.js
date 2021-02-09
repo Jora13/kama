@@ -1,10 +1,10 @@
 import './App.css';
-import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 import Sidebar from './components/Sidebar/Sidebar';
 import { BrowserRouter, Route } from 'react-router-dom';
 import state from './redux/store';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 
 function App(props) {
@@ -16,12 +16,9 @@ function App(props) {
         <div className="page_wrap">
           <Sidebar />
           <div className="content">
-            <Route path="/profile" render={() => <Profile
-              profiles={props.state.profilePage.profiles}
-              dispatch={props.dispatch}
-              myPostTextarea={props.state.profilePage.myPostTextarea} />}
+            <Route path="/profile" render={() => <Profile store={props.store} />}
             />
-            <Route path="/dialogs" render={() => <Dialogs store={props.store} dispatch={props.dispatch} />} />
+            <Route path="/dialogs" render={() => <DialogsContainer store={props.store} />} />
           </div>
         </div>
       </BrowserRouter>

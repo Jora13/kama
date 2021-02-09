@@ -7,7 +7,7 @@ import DialogMessage from './DialogMessage';
 
 function Dialogs(props) {
 
-   let state = props.store.getState().dialogState
+   let state = props.dialogState
 
    let dialogitems = state.dialogs.map((d) => {
       return (<DialogItem name={d.name} id={d.id} key={d.id} />)
@@ -21,13 +21,13 @@ function Dialogs(props) {
 
    let updateTextarea = () => {
       let text = newDialogElement.current.value
-      props.dispatch(changeDialogCreator(text))
+      props.updateNewMessage(text)
    }
 
    let addDialogMessage = () => {
       let text = newDialogElement.current.value
       if (text !== '') {
-         props.dispatch(addDialogCreator(text))
+         props.sendMessage(text)
          newDialogElement.current.value = ''
       }
    }
